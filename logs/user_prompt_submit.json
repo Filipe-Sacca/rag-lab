@@ -1,0 +1,202 @@
+[
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "fa\u00e7a para mim "
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "otimo, mas acredito que devemos simplificar a reinicia\u00e7\u00e3o dos servidores, centralizar em um comando unico npm run dev ai so entra dentro da pasta rag-lab e roda o comando que vai fazer o mesmo processo que estamos fazendo mas de forma mais r\u00e1pida, o que acha ?"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "ja sei o quea pasta api faz a pasta core faz o que ?"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "evaluation \u00e9 apnas a config do ragas certo ?"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "quero que me explique sobre todas as pastas o que fazem, apenas as pastas do backend"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "no caso a nossa llm n\u00e3o possui nenhum prompt ?"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "sim "
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "posw imple,emtar mas quero que os prompts sejam identicos em todas as t\u00e9cnicas, por que a ideia dessa aplica\u00e7\u00e3o \u00e9 utilizar diferentes t\u00e9cnicas de RAG e fazer a compara\u00e7\u00e3o entre elas "
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "/pr-comments "
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "a pasta graphs fa\\ oq ?"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "quais t\u00e9cnicas que faltam implementar ?"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "sim"
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "pode implementar as que faltam, ai testamos todas de uma vez"
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "vou basear o desempenho pelos scores dos top 3 chuncks e pelo RAGAS, e logicamente pela resposta, voce acha justo ?"
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "n\u00e3o precisa, vou testar agora, ja limpou nosso banco de dados ?"
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "outra pergunta, quantidade de chunks, devo variar tamb\u00e9m ?"
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "os dados n\u00e3o est\u00e3o sendo adicionados no banco de dados testei 2 vezes com o baseline e 1 com HyDE e n\u00e3o foram adicionados, investigue, se for testar lembre de n\u00e3o passar de 10 requisi\u00e7\u00f5es para a API do Google RPM"
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "siga"
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "gostaria que salvasse a resposta do agente tambem, adicione essa coluna "
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "[Image #1] n\u00e3o estou vendo a resposta do agente aqui "
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "Nao encontrei info rmacoes suficientes no contexto para responder essa pergunta. foi o que a t\u00e9cnica de rerak me retornou, sabe o que pode ser ? as tecnicasd baseline e hyde  encontraram, a de rerank esta inconsistente, os chuncks est\u00e3o perfeitos 99.8 e 99.5 mas a resposta n\u00e3o condiz"
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "sim, mas mantenha a temperatura padr\u00e3o em todos os agentes, do contr\u00e1rio n\u00e3o iremos conseguir realmente avaliar a performance de cada um com recis\u00e3o "
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "apague do banco se tiver dados da tecnica de rerank "
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "gerei a analise rerank mas n\u00e3o foi salva no banco "
+  },
+  {
+    "session_id": "aea1b8e6-498d-4706-9688-be3256e58436",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/aea1b8e6-498d-4706-9688-be3256e58436.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "gostaria que estudasse essa pasta inteira para que voce consiga organizar da melhor maneira possivel "
+  }
+]

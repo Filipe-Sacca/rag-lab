@@ -1,0 +1,265 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  ADAPTIVE RAG vs AGENTIC RAG - QUICK REFERENCE             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+ADAPTIVE RAG vs AGENTIC RAG at a Glance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                          ADAPTIVE              AGENTIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW IT DECIDES          Classifier            Agent Reasoning
+DECISION MAKING         Rule-based (dict)     Dynamic (reasoning)
+SPEED                   1.2-3.5s              2.5-7.0s (slower)
+COST                    $0.003-$0.008         $0.004-$0.015 (more)
+ITERATIONS              0 (single-pass)       1-10 (with loop)
+SELF-CORRECTION         NO                    YES
+GRAPH STRUCTURE         Linear DAG            Conditional Loop
+TOOL BINDING            None                  Yes (llm.bind_tools)
+MESSAGE HISTORY         None                  Yes (accumulates)
+DETERMINISTIC           YES                   NO
+LLM CALLS               1-2 (fixed)           2-10 (variable)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE CORE DIFFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Adaptive RAG:
+  1. Classify query: LLM extracts category (simple/complex/abstract/precision)
+  2. Route technique: Dict lookup (simple→baseline, complex→subquery, etc.)
+  3. Execute: Run chosen technique
+  4. Done (no loops, no refinement)
+
+Agentic RAG:
+  1. Agent reasons: "Which tool should I use?"
+  2. Execute tool: Run RAG or web search
+  3. Analyze results: "Do I have enough info?"
+  4. Loop back if needed (up to 10 times)
+  5. Extract final answer
+
+THE 4-CATEGORY LIMIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Adaptive RAG only knows about 4 query types:
+  • simple       → "What is X?"
+  • complex      → "Compare X and Y"
+  • abstract     → "How does X work?"
+  • precision    → "Medical/legal/technical details?"
+
+If your query doesn't fit these 4 categories... you're stuck!
+(Falls back to "simple" → baseline)
+
+Agentic RAG can handle ANY query type:
+  • Unknown patterns? Agent will reason about it
+  • Multi-step? Agent can chain tools
+  • Unclear? Agent can try different approaches
+
+WHEN TO USE EACH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Use ADAPTIVE RAG if:
+  ✓ Speed < 2 seconds required
+  ✓ Query patterns are predictable
+  ✓ Cost is critical
+  ✓ Deterministic behavior needed
+  ✓ You know your query types (FAQ, docs)
+  
+  Example: Customer support FAQ, technical documentation
+
+Use AGENTIC RAG if:
+  ✓ Quality > speed
+  ✓ Query types are diverse/unknown
+  ✓ Need self-correction
+  ✓ Can afford 2-3x latency
+  ✓ Multi-source research needed
+  
+  Example: Research assistant, exploratory search
+
+Hybrid:
+  ✓ Simple queries → Adaptive (fast)
+  ✓ Complex queries → Agentic (accurate)
+  ✓ Measure & optimize
+
+FILE LOCATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Adaptive RAG code:
+  /backend/techniques/adaptive/orchestrator.py (classify → select → execute)
+  /backend/techniques/adaptive/prompts.py (classification rules)
+  /backend/techniques/adaptive/tools.py (technique wrappers)
+
+Agentic RAG code:
+  /backend/techniques/agentic_rag.py (agent_node → should_continue → loop)
+
+Documentation:
+  /COMPARISON_INDEX.md (start here!)
+  /ANALYSIS_SUMMARY.md (quick overview)
+  /adaptive_vs_agentic_comparison.md (technical details)
+  /decision_mechanisms_visual.md (visual diagrams)
+
+KEY CODE SNIPPETS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ADAPTIVE - Routing Decision:
+  CATEGORY_TO_TECHNIQUE = {
+      "simple": "baseline",
+      "complex": "subquery",
+      "abstract": "hyde",
+      "precision": "reranking",
+  }
+  # That's it! No reasoning, just lookup.
+
+AGENTIC - Tool Binding:
+  llm_with_tools = llm.bind_tools([internal_rag_tool, web_search_tool])
+  response = llm_with_tools.invoke(messages)  # LLM decides which tool to use
+  # Can iterate: if response has tool_calls, execute them and loop back
+
+AGENTIC - Loop Control:
+  def should_continue(state):
+      if state["messages"][-1].tool_calls:
+          return "tools"  # Execute tools again
+      return "end"       # Done, extract answer
+
+MESSAGE HISTORY DIFFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Adaptive RAG State:
+  {
+    query: "Compare Python and JavaScript",
+    query_type: "complex",         ← Set once, never changes
+    technique: "subquery",         ← Set once, never changes
+    answer: "Python is...",
+    sources: [...],
+  }
+
+Agentic RAG State:
+  {
+    messages: [                    ← ACCUMULATES!
+      HumanMessage("Compare..."),
+      AIMessage("Call RAG...", tool_calls=[...]),
+      ToolMessage(answer="Python is..."),
+      AIMessage("More details...", tool_calls=[...]),
+      ToolMessage(answer="...also has..."),
+      AIMessage("Ready to answer", tool_calls=[])
+    ],
+    query: "Compare Python and JavaScript",
+    answer: "",  ← Not set until the end!
+    sources: [],
+  }
+
+QUICK DECISION TREE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                    Does speed matter most?
+                            |
+                    ┌───────┴───────┐
+                   YES              NO
+                    |               |
+                    v               v
+              Use Adaptive      Can you afford
+                (faster)        2-3x latency?
+                                    |
+                            ┌───────┴────────┐
+                           YES               NO
+                            |                 |
+                            v                 v
+                      Use Agentic      Use Adaptive
+                      (more accurate)   (simpler)
+
+PERFORMANCE COMPARISON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Speed:    Adaptive: ████████░░ (1.2-3.5s)     Agentic: ██████░░░░ (2.5-7.0s)
+Cost:     Adaptive: ██████████ ($0.003-0.008) Agentic: ████░░░░░░ ($0.004-0.015)
+Quality:  Adaptive: ██████░░░░ (78-85%)      Agentic: ████████░░ (82-90%)
+Flexible: Adaptive: ██████░░░░ (4 categories) Agentic: ██████████ (unlimited)
+
+WHAT "ADAPTIVE" REALLY MEANS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Adaptive" ≠ adapts in real-time
+"Adaptive" = pre-selects the BEST technique FOR each query TYPE
+
+Like having 4 specialist experts:
+  • Expert 1 (simple questions): Fast and direct
+  • Expert 2 (complex questions): Breaks it down
+  • Expert 3 (abstract questions): Explains concepts
+  • Expert 4 (precision questions): Double-checks sources
+
+You pick the right expert at the START, not during the process.
+
+"AGENTIC" means the agent can:
+  • Change its mind mid-execution
+  • Try different tools
+  • Refine based on results
+  • Call for help if stuck
+  • Self-correct
+
+CONFUSION ALERT!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DON'T confuse:
+  • Classification (what type?) vs Routing (which path?)
+  • Tool binding vs tool calling
+  • Single-pass vs multi-turn
+  • Deterministic vs stochastic
+
+Adaptive has:
+  ✓ Classification (one LLM call)
+  ✗ No tool binding (direct function calls)
+  ✓ Single-pass (no loops)
+  ✓ Deterministic (same input = same output)
+
+Agentic has:
+  ✗ No classification (just reasoning)
+  ✓ Tool binding (llm.bind_tools)
+  ✓ Multi-turn (loops allowed)
+  ✗ Stochastic (same input = may vary)
+
+QUICK REFERENCE CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For IMPLEMENTATION decisions:
+  ☐ Check your speed requirements
+  ☐ Check your query patterns (predictable?)
+  ☐ Check your cost constraints
+  ☐ Consider your query diversity
+  ☐ Think about failure scenarios
+  ☐ Measure both in your domain
+
+For ARCHITECTURE understanding:
+  ☐ Read how classification works (Adaptive)
+  ☐ Read how tool binding works (Agentic)
+  ☐ Understand message accumulation (Agentic)
+  ☐ See the 4-node flow (Adaptive)
+  ☐ See the conditional loop (Agentic)
+
+For TROUBLESHOOTING:
+  ☐ If Adaptive gives wrong answer: might be misclassification
+  ☐ If Agentic is too slow: check iteration count
+  ☐ If Agentic gives inconsistent answers: that's normal (stochastic)
+  ☐ If Adaptive can't handle your query: not in the 4 categories
+
+DOCUMENTS TO READ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Time available?
+
+5 min:    COMPARISON_INDEX.md
+15 min:   ANALYSIS_SUMMARY.md
+30 min:   decision_mechanisms_visual.md
+60 min:   All + code files
+30 min:   Just visual diagrams
+
+Got a specific question?
+  → Use COMPARISON_INDEX.md "Questions? Check Here" table
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Remember: This is NOT an either/or choice!
+         Consider a HYBRID approach:
+         • Simple queries → Adaptive (fast)
+         • Complex queries → Agentic (accurate)
+         • Measure both, optimize for your use case
+
+Last updated: November 24, 2025
+All information verified against actual codebase

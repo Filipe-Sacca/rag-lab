@@ -1,0 +1,44 @@
+INFO:     Will watch for changes in these directories: ['/root/Filipe/Teste-Claude/rag-lab/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [981362] using StatReload
+INFO:     Started server process [981364]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Starting RAG Lab Backend v0.1.0
+Environment: development
+Initializing database...
+Database initialized: /root/Filipe/Teste-Claude/rag-lab/backend/rag_lab.db
+Tables created: rag_executions, rag_metrics
+Database status: unhealthy
+Database location: /root/Filipe/Teste-Claude/rag-lab/backend/rag_lab.db
+Tables: None
+INFO:     127.0.0.1:39270 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39276 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37800 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37802 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56160 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54598 - "HEAD /api/v1/comparison-data HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:54608 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54620 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     198.235.24.85:63828 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58764 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58778 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38198 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38202 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34724 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34728 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41338 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41340 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35436 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35450 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56968 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56974 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50832 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50842 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53964 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53966 - "GET /api/v1/comparison-data HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [981364]
+INFO:     Stopping reloader process [981362]

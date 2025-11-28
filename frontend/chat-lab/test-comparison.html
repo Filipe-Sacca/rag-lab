@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Comparison Table</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f0f0f0; }
+        .metric { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>RAG Comparison Data Test</h1>
+    <div id="status">Loading...</div>
+    <div id="data"></div>
+    
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/comparison-data');
+                const data = await response.json();
+                
+                document.getElementById('status').innerHTML = `✅ Loaded ${data.length} records`;
+                
+                let html = `<table>
+                    <tr>
+                        <th>Technique</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>Latency</th>
+                        <th>Faithfulness</th>
+                        <th>Relevancy</th>
+                        <th>Answer</th>
+                    </tr>`;
+                
+                data.forEach(row => {
+                    html += `<tr>
+                        <td class="metric">${row.technique}</td>
+                        <td>${row.precision?.toFixed(2)}</td>
+                        <td>${row.recall?.toFixed(2)}</td>
+                        <td>${row.latency_ms?.toFixed(1)}ms</td>
+                        <td>${row.faithfulness?.toFixed(2)}</td>
+                        <td>${row.answer_relevancy?.toFixed(2)}</td>
+                        <td>${row.answer.substring(0, 50)}...</td>
+                    </tr>`;
+                });
+                
+                html += '</table>';
+                document.getElementById('data').innerHTML = html;
+            } catch (err) {
+                document.getElementById('status').innerHTML = `❌ Error: ${err.message}`;
+            }
+        }
+        
+        loadData();
+        setInterval(loadData, 5000); // Auto-refresh every 5s
+    </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+{
+  "checkpoint_id": "cp_2_1763513800",
+  "message_count": 2,
+  "timestamp": "2024-11-19T18:30:00Z",
+  "summary": {
+    "initial_context": {
+      "project": "RAG Lab",
+      "goal": "Plataforma interativa para experimentação de 9 técnicas RAG",
+      "phase": "Paralelização Backend-Frontend",
+      "status": "Documentação completa, iniciando implementação"
+    },
+    "conversation_flow": {
+      "message_1": {
+        "user_question": "O que é Neo4j?",
+        "response": "Explicação completa sobre Neo4j como graph database para Graph RAG",
+        "key_points": [
+          "Neo4j é banco de dados de grafos nativo",
+          "Usa modelo de propriedades (nós, relacionamentos, propriedades)",
+          "Performance O(1) para queries relacionais vs O(n²) SQL",
+          "Linguagem Cypher para queries",
+          "Casos de uso: redes sociais, fraude, knowledge graphs, Graph RAG",
+          "AuraDB free tier suficiente para RAG Lab"
+        ]
+      },
+      "message_2": {
+        "user_request": "Paralelizar trabalho backend-frontend com dois Claudes",
+        "questions": [
+          "Como dar contexto ao outro Claude?",
+          "Como conectar backend-frontend depois?"
+        ],
+        "solution_proposed": "Contract-First Development",
+        "documents_created": [
+          "frontend/docs/API_CONTRACT.md",
+          "frontend/docs/FRONTEND_BRIEFING.md",
+          ".env.example",
+          "backend/requirements.txt"
+        ]
+      }
+    },
+    "technical_context": {
+      "stack": {
+        "llm": {
+          "provider": "Google",
+          "model": "gemini-2.5-flash",
+          "cost_per_1m_tokens_input": 0.075,
+          "cost_per_1m_tokens_output": 0.30
+        },
+        "embeddings": {
+          "provider": "Google",
+          "model": "text-embedding-004",
+          "dimension": 768,
+          "cost": "FREE"
+        },
+        "vector_db": {
+          "provider": "Pinecone",
+          "tier": "Free (100K vectors)",
+          "environment": "gcp-starter"
+        },
+        "reranking": {
+          "provider": "Cohere",
+          "model": "rerank-english-v3.0"
+        },
+        "graph_db": {
+          "provider": "Neo4j",
+          "tier": "AuraDB Free",
+          "usage": "Graph RAG (Fase 5)"
+        },
+        "backend": {
+          "framework": "FastAPI",
+          "language": "Python 3.11+",
+          "orchestration": ["LangChain", "LangGraph"],
+          "evaluation": "RAGAS"
+        },
+        "frontend": {
+          "framework": "React 18",
+          "build_tool": "Vite 5",
+          "language": "TypeScript",
+          "styling": "TailwindCSS 3",
+          "http_client": "Axios",
+          "charts": "Chart.js"
+        }
+      },
+      "rag_techniques": {
+        "implemented": [],
+        "planned": [
+          {
+            "id": "baseline",
+            "name": "Baseline RAG",
+            "priority": 1,
+            "complexity": "low"
+          },
+          {
+            "id": "hyde",
+            "name": "HyDE",
+            "priority": 2,
+            "complexity": "medium"
+          },
+          {
+            "id": "reranking",
+            "name": "Reranking",
+            "priority": 3,
+            "complexity": "medium"
+          },
+          {
+            "id": "subquery",
+            "name": "Sub-Query",
+            "priority": 4,
+            "complexity": "high"
+          },
+          {
+            "id": "fusion",
+            "name": "Fusion",
+            "priority": 5,
+            "complexity": "high"
+          },
+          {
+            "id": "graph",
+            "name": "Graph RAG",
+            "priority": 6,
+            "complexity": "very_high"
+          },
+          {
+            "id": "parent",
+            "name": "Parent Document",
+            "priority": 7,
+            "complexity": "medium"
+          },
+          {
+            "id": "agentic",
+            "name": "Agentic RAG",
+            "priority": 8,
+            "complexity": "high"
+          },
+          {
+            "id": "adaptive",
+            "name": "Adaptive RAG",
+            "priority": 9,
+            "complexity": "high"
+          }
+        ]
+      },
+      "api_endpoints": [
+        "GET /api/techniques",
+        "POST /api/query",
+        "POST /api/compare",
+        "POST /api/evaluate",
+        "POST /api/documents/upload",
+        "GET /api/documents",
+        "DELETE /api/documents/{id}",
+        "GET /api/health",
+        "WS /ws/stream"
+      ]
+    },
+    "current_state": {
+      "documentation": {
+        "status": "complete",
+        "files": [
+          "README.md (completo)",
+          "docs/BASELINE_RAG.md",
+          "docs/HYDE.md",
+          "docs/RERANKING.md",
+          "docs/SUBQUERY.md",
+          "docs/FUSION.md",
+          "docs/GRAPH_RAG.md",
+          "docs/PARENT_DOCUMENT.md",
+          "docs/AGENTIC_RAG.md",
+          "docs/ADAPTIVE_RAG.md",
+          "docs/COMPARISON.md",
+          "docs/FUTURE_TECHNIQUES.md",
+          "frontend/docs/API_CONTRACT.md",
+          "frontend/docs/FRONTEND_BRIEFING.md"
+        ]
+      },
+      "backend": {
+        "status": "ready_to_implement",
+        "files_created": [
+          "backend/requirements.txt",
+          ".env.example"
+        ],
+        "next_steps": [
+          "Setup FastAPI project structure",
+          "Configure Pinecone connection",
+          "Integrate Gemini SDK",
+          "Implement Baseline RAG",
+          "Implement HyDE",
+          "Implement Reranking",
+          "Create REST API endpoints",
+          "Add RAGAS evaluation"
+        ]
+      },
+      "frontend": {
+        "status": "delegated_to_other_claude",
+        "responsibility": "Outro Claude em terminal paralelo",
+        "briefing_file": "frontend/docs/FRONTEND_BRIEFING.md",
+        "contract_file": "frontend/docs/API_CONTRACT.md"
+      },
+      "parallelization": {
+        "strategy": "Contract-First Development",
+        "backend_claude": "Este terminal - implementa FastAPI + RAG",
+        "frontend_claude": "Outro terminal - implementa React + UI",
+        "communication": "Via API REST (API_CONTRACT.md)",
+        "integration_point": "localhost:8000 (backend) + localhost:5173 (frontend)",
+        "cors_configured": true
+      }
+    },
+    "next_steps": [
+      "Backend: Criar estrutura FastAPI",
+      "Backend: Setup Pinecone + Gemini",
+      "Backend: Implementar Baseline RAG (primeira técnica)",
+      "Backend: Implementar endpoints REST básicos",
+      "Backend: Adicionar RAGAS evaluation",
+      "Backend: Implementar HyDE",
+      "Backend: Implementar Reranking",
+      "Frontend: (Outro Claude) Setup React + Vite",
+      "Frontend: (Outro Claude) Criar componentes UI",
+      "Frontend: (Outro Claude) Integração com API",
+      "Integração: Testar comunicação backend-frontend",
+      "Integração: Validar métricas RAGAS",
+      "Documentação: Atualizar README com instruções de setup"
+    ]
+  },
+  "important_decisions": {
+    "no_openai": "Usando Google Gemini, NÃO OpenAI",
+    "pinecone_vs_chromadb": "Pinecone escolhido para evitar custo de VPS",
+    "cohere_reranking": "Melhor precisão (+15% vs alternativas)",
+    "documentation_first": "Toda documentação criada antes da implementação",
+    "contract_first": "API contract definido antes de começar código",
+    "no_overengineering": "REGRA IMPORTANTE - apenas trabalho bem-feito"
+  },
+  "user_preferences": {
+    "language": "Portuguese (pt-BR)",
+    "communication_style": "Direto, sem over-engineering",
+    "project_structure": "Modular, cada técnica = 1 módulo",
+    "quality": "Bem-feito > Complexo",
+    "parallelization": "Backend e Frontend independentes"
+  },
+  "files_structure": {
+    "root": "/root/Filipe/Teste-Claude/rag-lab/",
+    "backend": "backend/",
+    "frontend": "frontend/chat-lab/",
+    "docs": "docs/",
+    "data": "data/docs/",
+    "config": [
+      ".env.example",
+      "backend/requirements.txt"
+    ]
+  },
+  "cost_estimates": {
+    "monthly_budget": "$20-30",
+    "baseline_per_query": "$0.002",
+    "hyde_per_query": "$0.004",
+    "fusion_per_query": "$0.018",
+    "expected_usage": "3000 queries/month",
+    "average_cost": "$0.006/query com mix de técnicas"
+  }
+}

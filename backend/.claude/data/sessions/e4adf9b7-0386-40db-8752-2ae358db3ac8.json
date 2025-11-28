@@ -1,0 +1,18 @@
+{
+  "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+  "prompts": [
+    "eu ainda n\u00e3o entendi o que quis dizer com cross e bi encoders",
+    "N\u00e3o encontrei informa\u00e7\u00f5es suficientes no contexto para responder essa pergunta. Foi a resposta dele, os top scores n\u00e3o est\u00e3o sendo salvos no banco tamb\u00e9m top scores com menos de 5% utilizei o rag fusion ",
+    "testei aqui o fusion e n\u00e3o salvou no banco de dados, e uma pergunta os scores baixos dos chuncks \u00e9 particularidade dessa tecnica ? seja direto ",
+    "continua n\u00e3o salvando no banco de dados ",
+    "nada ainda",
+    "salvou mas os topscores ficaram de fora kk",
+    "[Image #1] veja que a coluna esta vazioa , os scores foram abaixo de 5% como sempre mas isso n\u00e3o me incomoda",
+    "N\u00e3o encontrei informa\u00e7\u00f5es suficientes no contexto para responder essa pergunta. testando a t\u00e9cnica sub-querys recebi essa resposta, investigue ",
+    "mesmo problema e n\u00e3o foi salvo no banco de dados tamb\u00e9m ",
+    "Os herbicidas atuam de forma diferente nas plantas, de acordo com seu mecanismo e modo de a\u00e7\u00e3o, bem como t\u00eam caracter\u00edsticas que devem ser atendidas para realizar sua aplica\u00e7\u00e3o.\n\nCom base nisso, os __________ necessitam de boa cobertura foliar no momento da aplica\u00e7\u00e3o. As manchas escuras que progridem para necrose s\u00e3o sintomas dos __________. J\u00e1 os __________ s\u00e3o aqueles que ocasionam paralisa\u00e7\u00e3o do crescimento e necrose do ponto de  crescimento. Enquanto o branqueamento das plantas \u00e9 sintoma caracter\u00edstico dos __________. Os __________ s\u00e3o herbicidas sist\u00eamicos utilizados em p\u00f3s-emerg\u00eancia e n\u00e3o t\u00eam efeito residual. \n\n\u200b\u200b\u200b\u200b\u200b\u200b\u200bAssinale a alternativa que apresenta a sequ\u00eancia de mecanismos de a\u00e7\u00e3o correta.\n\nSelecione a resposta:\na\ninibidores da protox / inibidores da protox / inibidores da ACCase / inibidores da s\u00edntese de carotenoides / inibidores da ACCase.\n\nb\ninibidores da ACCase / inibidores da protox / inibidores da ACCase / inibidores da s\u00edntese de carotenoides / inibidores da protox.\n\nc\ninibidores da s\u00edntese de carotenoides / inibidores da ACCase / inibidores da ACCase / inibidores da protox / inibidores da protox.\n\nd\ninibidores da protox / inibidores da ACCase / inibidores da protox / inibidores da s\u00edntese de carotenoides / inibidores da ACCase.\n\ne\ninibidores da s\u00edntese de carotenoides / inibidores da protox / inibidores da ACCase / inibidores da s\u00edntese de carotenoides / inibidores da protox.:8000/api/v1/query:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+    "estou usando o adaptive rag ",
+    "porque esta corrigindo o subquery ? ele esta perfeito como estavA?",
+    "reinicie os servidores por gentileza"
+  ]
+}

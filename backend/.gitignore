@@ -1,0 +1,37 @@
+# SQLite database files
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Alembic
+alembic/versions/*.py
+!alembic/versions/__init__.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

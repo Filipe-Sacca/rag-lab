@@ -1,0 +1,18 @@
+{
+  "session_id": "71f6eafb-bd0a-4115-8aac-a2b5a0854cb6",
+  "prompts": [
+    "[Image #1] de uma arrumada na nossa header essa logo esta feia demais seja mais criatvio",
+    "gradiente ficou feio, quero algo mais minimalista preto cinza branco, simples",
+    "[Image #1] aqui voce poderia estar estilizando mais ",
+    "na parte do chat ali voce pode aumentar ela, ai deixa a sele\u00e7\u00e3o de tecnica e=em cima do chat ",
+    "[Image #1] essa parte assim que eu executo uma query na tecnica de rerank n\u00e3o esta funcionando dinamicamente ",
+    "o ragas funciona como especificamente cada campo dele ",
+    "entendi, estou achando a respotas da query muito abaixo, gostaria que a resposta ficasse embaixo do meu chat",
+    "gostaria que no banco fosse adicionado tamb\u00e9m o score do maior chunk, mas primeiro uma pergunta o sistema esta limitado a buscar apenas 5 chucks dos arquivos ou ele faz a busca de muitos chuncks e simplesmente filtra os melhores ? quero saber se \u00e9 isso independente da t\u00e9cnica usada ",
+    "voce acha correto limitar a apenas 5 chuncks ? e porque resposta direta ",
+    "seria otimo ",
+    "sabe na parte RAG Technique Comparison eu gostaria que voce adicionasse um agente especialista em fazer essas compara\u00e7\u00f5es baseadas nos dados, ou seja se existe cerca de 10 t\u00e9cnicas Baseline cadastradas com seus respectivos dados, ele vai l\u00e1 concatena tudo e faz a m\u00e9dia, e o mesmo com as outras tecnicas e depois ele apenas as coloxca lado a lado com gr\u00e1ficos com at\u00e9 mesmo o resumo em escrito tamb\u00e9m e gerasse um arquivo ui para mim de maneira interativa tb, deu para entender a minha ideia ? poderia estruturar meu pensamento por favor ",
+    "Eu gostaria que fosse em outra p\u00e1gina, o modelo \u00e9 o gemini mesmo o mesmo que estamos acostumados e o formato da exporta\u00e7\u00e3o pode ser o que eu consiga visualizar o ui acredito que seja o pdf. E a frequencia \u00e9 apenas quando eu clicar no bot\u00e3o apenas sobdemanda ",
+    "pode seguir "
+  ]
+}

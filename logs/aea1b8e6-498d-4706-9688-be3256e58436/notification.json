@@ -1,0 +1,18 @@
+[
+  {
+    "session_id": "aea1b8e6-498d-4706-9688-be3256e58436",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/aea1b8e6-498d-4706-9688-be3256e58436.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "hook_event_name": "Notification",
+    "message": "Claude Code needs your attention",
+    "notification_type": "permission_prompt"
+  },
+  {
+    "session_id": "aea1b8e6-498d-4706-9688-be3256e58436",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/aea1b8e6-498d-4706-9688-be3256e58436.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input",
+    "notification_type": "idle_prompt"
+  }
+]

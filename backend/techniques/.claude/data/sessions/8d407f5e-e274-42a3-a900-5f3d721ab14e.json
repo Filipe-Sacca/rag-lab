@@ -1,0 +1,14 @@
+{
+  "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+  "prompts": [
+    "ja esta tudo funcionando no frontend ?",
+    "pode seguir ",
+    "pode seguir",
+    "/context save",
+    "uma pergunta quais s\u00e3o as m\u00e9tricas das t\u00e9cnicas ? como custo latencia etc",
+    "mas nenhuma t\u00e9cnica possui essas m\u00e9tricas fixas quando eu ativo elas certo?",
+    "Query failed: GenerativeServiceClient.generate_content() got an unexpected keyword argument 'temperature'POST http://localhost:8000/api/v1/query 500 (Internal Server Error)\ndispatchXhrRequest @ axios.js?v=1e05d7c5:1696\nxhr @ axios.js?v=1e05d7c5:1573\ndispatchRequest @ axios.js?v=1e05d7c5:2107\n_request @ axios.js?v=1e05d7c5:2327\nrequest @ axios.js?v=1e05d7c5:2219\nhttpMethod @ axios.js?v=1e05d7c5:2356\nwrap @ axios.js?v=1e05d7c5:8\nquery @ rag.service.ts:17\nhandleQuery @ App.tsx:61\nhandleSubmit @ QueryInput.tsx:16\nhandleKeyDown @ QueryInput.tsx:23\ncallCallback2 @ chunk-NUMECXU6.js?v=1e05d7c5:3674\ninvokeGuardedCallbackDev @ chunk-NUMECXU6.js?v=1e05d7c5:3699\ninvokeGuardedCallback @ chunk-NUMECXU6.js?v=1e05d7c5:3733\ninvokeGuardedCallbackAndCatchFirstError @ chunk-NUMECXU6.js?v=1e05d7c5:3736\nexecuteDispatch @ chunk-NUMECXU6.js?v=1e05d7c5:7014\nprocessDispatchQueueItemsInOrder @ chunk-NUMECXU6.js?v=1e05d7c5:7034\nprocessDispatchQueue @ chunk-NUMECXU6.js?v=1e05d7c5:7043\ndispatchEventsForPlugins @ chunk-NUMECXU6.js?v=1e05d7c5:7051\n(anonymous) @ chunk-NUMECXU6.js?v=1e05d7c5:7174\nbatchedUpdates$1 @ chunk-NUMECXU6.js?v=1e05d7c5:18913\nbatchedUpdates @ chunk-NUMECXU6.js?v=1e05d7c5:3579\ndispatchEventForPluginEventSystem @ chunk-NUMECXU6.js?v=1e05d7c5:7173\ndispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-NUMECXU6.js?v=1e05d7c5:5478\ndispatchEvent @ chunk-NUMECXU6.js?v=1e05d7c5:5472\ndispatchDiscreteEvent @ chunk-NUMECXU6.js?v=1e05d7c5:5449",
+    "Error\nQuery failed: 'query' rag.service.ts:17 \n POST http://localhost:8000/api/v1/query 500 (Internal Server Error)\n\n\ufeff\n",
+    "Hyde, enviei essa query Como funciona a t\u00e9cnica RAG Baseline ? e no console foi esse erro que eu te enviei "
+  ]
+}

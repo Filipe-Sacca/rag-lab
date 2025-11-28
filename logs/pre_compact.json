@@ -1,0 +1,26 @@
+[
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "hook_event_name": "PreCompact",
+    "trigger": "manual",
+    "custom_instructions": ""
+  },
+  {
+    "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "hook_event_name": "PreCompact",
+    "trigger": "manual",
+    "custom_instructions": ""
+  },
+  {
+    "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/e4adf9b7-0386-40db-8752-2ae358db3ac8.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "hook_event_name": "PreCompact",
+    "trigger": "manual",
+    "custom_instructions": ""
+  }
+]

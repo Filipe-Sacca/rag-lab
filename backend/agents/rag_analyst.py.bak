@@ -1,0 +1,646 @@
+"""
+RAG Analyst Agent - LangGraph Implementation
+
+An intelligent agent that analyzes RAG technique performance using tools
+to query the database dynamically and provide actionable insights.
+
+Architecture:
+    User Question → Agent → Tools → Database → Analysis → Response
+
+Tools Available:
+    1. get_technique_stats - Get aggregated stats for a specific technique
+    2. compare_techniques - Compare two techniques head-to-head
+    3. get_best_technique - Find best technique for a specific metric
+    4. get_execution_details - Get details of specific executions
+    5. get_anomalies - Detect performance anomalies
+"""
+
+from typing import TypedDict, Annotated, Sequence, Literal, Any, Optional
+from datetime import datetime, timedelta
+import operator
+import json
+
+from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, ToolMessage
+from langchain_core.tools import tool
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langgraph.graph import StateGraph, END
+from langgraph.prebuilt import ToolNode
+from sqlalchemy import func, desc
+from sqlalchemy.orm import Session
+
+from config import settings
+from db.models import RAGExecution, RAGMetric
+from db.database import get_db
+
+
+# =============================================================================
+# STATE DEFINITION
+# =============================================================================
+
+class AgentState(TypedDict):
+    """State that flows through the agent graph."""
+    messages: Annotated[Sequence[BaseMessage], operator.add]
+    db_session: Optional[Any]  # SQLAlchemy session
+
+
+# =============================================================================
+# TOOL DEFINITIONS
+# =============================================================================
+
+@tool
+def get_technique_stats(technique_name: str) -> str:
+    """
+    Get detailed statistics for a specific RAG technique.
+
+    Args:
+        technique_name: Name of the technique (e.g., 'baseline', 'reranking', 'hyde')
+
+    Returns:
+        JSON string with aggregated statistics including latency, quality metrics, and execution count.
+    """
+    db = next(get_db())
+    try:
+        result = db.query(
+            func.count(RAGExecution.id).label('total_executions'),
+            func.avg(RAGMetric.latency_ms).label('avg_latency_ms'),
+            func.min(RAGMetric.latency_ms).label('min_latency_ms'),
+            func.max(RAGMetric.latency_ms).label('max_latency_ms'),
+            func.avg(RAGMetric.faithfulness).label('avg_faithfulness'),
+            func.avg(RAGMetric.answer_relevancy).label('avg_answer_relevancy'),
+            func.avg(RAGMetric.context_precision).label('avg_context_precision'),
+            func.avg(RAGMetric.context_recall).label('avg_context_recall'),
+            func.avg(RAGMetric.chunks_retrieved).label('avg_chunks'),
+        ).join(RAGMetric, RAGExecution.id == RAGMetric.execution_id
+        ).filter(RAGExecution.technique_name == technique_name
+        ).first()
+
+        if not result or result.total_executions == 0:
+            return json.dumps({"error": f"No data found for technique '{technique_name}'"})
+
+        return json.dumps({
+            "technique": technique_name,
+            "total_executions": result.total_executions,
+            "latency": {
+                "avg_ms": round(result.avg_latency_ms or 0, 2),
+                "min_ms": round(result.min_latency_ms or 0, 2),
+                "max_ms": round(result.max_latency_ms or 0, 2),
+            },
+            "quality": {
+                "faithfulness": round((result.avg_faithfulness or 0) * 100, 1),
+                "answer_relevancy": round((result.avg_answer_relevancy or 0) * 100, 1),
+                "context_precision": round((result.avg_context_precision or 0) * 100, 1),
+                "context_recall": round((result.avg_context_recall or 0) * 100, 1),
+            },
+            "avg_chunks_retrieved": round(result.avg_chunks or 0, 1),
+        }, indent=2)
+    finally:
+        db.close()
+
+
+@tool
+def compare_techniques(technique_a: str, technique_b: str) -> str:
+    """
+    Compare two RAG techniques head-to-head across all metrics.
+
+    Args:
+        technique_a: First technique name
+        technique_b: Second technique name
+
+    Returns:
+        JSON comparison showing which technique wins in each metric category.
+    """
+    db = next(get_db())
+    try:
+        def get_stats(technique):
+            return db.query(
+                func.avg(RAGMetric.latency_ms).label('avg_latency'),
+                func.avg(RAGMetric.faithfulness).label('faithfulness'),
+                func.avg(RAGMetric.answer_relevancy).label('relevancy'),
+                func.avg(RAGMetric.context_precision).label('precision'),
+                func.avg(RAGMetric.context_recall).label('recall'),
+                func.count(RAGExecution.id).label('count'),
+            ).join(RAGMetric, RAGExecution.id == RAGMetric.execution_id
+            ).filter(RAGExecution.technique_name == technique
+            ).first()
+
+        stats_a = get_stats(technique_a)
+        stats_b = get_stats(technique_b)
+
+        if not stats_a.count or not stats_b.count:
+            return json.dumps({"error": "One or both techniques have no data"})
+
+        comparison = {
+            "techniques": [technique_a, technique_b],
+            "sample_sizes": [stats_a.count, stats_b.count],
+            "metrics": {
+                "latency_ms": {
+                    technique_a: round(stats_a.avg_latency or 0, 2),
+                    technique_b: round(stats_b.avg_latency or 0, 2),
+                    "winner": technique_a if (stats_a.avg_latency or 999999) < (stats_b.avg_latency or 999999) else technique_b,
+                    "difference_pct": round(abs((stats_a.avg_latency or 0) - (stats_b.avg_latency or 0)) / max(stats_a.avg_latency or 1, 1) * 100, 1),
+                },
+                "faithfulness": {
+                    technique_a: round((stats_a.faithfulness or 0) * 100, 1),
+                    technique_b: round((stats_b.faithfulness or 0) * 100, 1),
+                    "winner": technique_a if (stats_a.faithfulness or 0) > (stats_b.faithfulness or 0) else technique_b,
+                },
+                "answer_relevancy": {
+                    technique_a: round((stats_a.relevancy or 0) * 100, 1),
+                    technique_b: round((stats_b.relevancy or 0) * 100, 1),
+                    "winner": technique_a if (stats_a.relevancy or 0) > (stats_b.relevancy or 0) else technique_b,
+                },
+                "context_precision": {
+                    technique_a: round((stats_a.precision or 0) * 100, 1),
+                    technique_b: round((stats_b.precision or 0) * 100, 1),
+                    "winner": technique_a if (stats_a.precision or 0) > (stats_b.precision or 0) else technique_b,
+                },
+                "context_recall": {
+                    technique_a: round((stats_a.recall or 0) * 100, 1),
+                    technique_b: round((stats_b.recall or 0) * 100, 1),
+                    "winner": technique_a if (stats_a.recall or 0) > (stats_b.recall or 0) else technique_b,
+                },
+            }
+        }
+
+        # Count wins
+        wins = {technique_a: 0, technique_b: 0}
+        for metric, data in comparison["metrics"].items():
+            wins[data["winner"]] += 1
+        comparison["overall_winner"] = technique_a if wins[technique_a] > wins[technique_b] else technique_b
+        comparison["win_count"] = wins
+
+        return json.dumps(comparison, indent=2)
+    finally:
+        db.close()
+
+
+@tool
+def get_best_technique(metric: str) -> str:
+    """
+    Find the best performing technique for a specific metric.
+
+    Args:
+        metric: One of 'latency', 'faithfulness', 'relevancy', 'precision', 'recall', 'overall'
+
+    Returns:
+        JSON with ranking of techniques for the specified metric.
+    """
+    db = next(get_db())
+    try:
+        metric_map = {
+            'latency': (RAGMetric.latency_ms, 'asc'),  # Lower is better
+            'faithfulness': (RAGMetric.faithfulness, 'desc'),
+            'relevancy': (RAGMetric.answer_relevancy, 'desc'),
+            'precision': (RAGMetric.context_precision, 'desc'),
+            'recall': (RAGMetric.context_recall, 'desc'),
+        }
+
+        if metric == 'overall':
+            # Calculate composite score
+            results = db.query(
+                RAGExecution.technique_name,
+                func.count(RAGExecution.id).label('count'),
+                func.avg(RAGMetric.faithfulness).label('faithfulness'),
+                func.avg(RAGMetric.answer_relevancy).label('relevancy'),
+                func.avg(RAGMetric.context_precision).label('precision'),
+                func.avg(RAGMetric.context_recall).label('recall'),
+                func.avg(RAGMetric.latency_ms).label('latency'),
+            ).join(RAGMetric, RAGExecution.id == RAGMetric.execution_id
+            ).group_by(RAGExecution.technique_name).all()
+
+            rankings = []
+            for r in results:
+                # Composite: 40% quality, 30% relevancy, 20% precision/recall, 10% speed
+                quality_score = (r.faithfulness or 0) * 0.4 + (r.relevancy or 0) * 0.3
+                context_score = ((r.precision or 0) + (r.recall or 0)) / 2 * 0.2
+                # Normalize latency (assume 5000ms is worst, 0 is best)
+                speed_score = max(0, 1 - (r.latency or 5000) / 5000) * 0.1
+                composite = quality_score + context_score + speed_score
+
+                rankings.append({
+                    "technique": r.technique_name,
+                    "composite_score": round(composite * 100, 1),
+                    "executions": r.count,
+                })
+
+            rankings.sort(key=lambda x: x["composite_score"], reverse=True)
+            return json.dumps({"metric": "overall", "rankings": rankings}, indent=2)
+
+        if metric not in metric_map:
+            return json.dumps({"error": f"Invalid metric. Choose from: {list(metric_map.keys())} or 'overall'"})
+
+        column, order = metric_map[metric]
+        order_func = func.avg(column).asc() if order == 'asc' else func.avg(column).desc()
+
+        results = db.query(
+            RAGExecution.technique_name,
+            func.avg(column).label('value'),
+            func.count(RAGExecution.id).label('count'),
+        ).join(RAGMetric, RAGExecution.id == RAGMetric.execution_id
+        ).group_by(RAGExecution.technique_name
+        ).order_by(order_func).all()
+
+        rankings = []
+        for i, r in enumerate(results, 1):
+            value = r.value or 0
+            if metric != 'latency':
+                value = value * 100  # Convert to percentage
+            rankings.append({
+                "rank": i,
+                "technique": r.technique_name,
+                "value": round(value, 2),
+                "unit": "ms" if metric == 'latency' else "%",
+                "executions": r.count,
+            })
+
+        return json.dumps({"metric": metric, "rankings": rankings}, indent=2)
+    finally:
+        db.close()
+
+
+@tool
+def get_execution_details(technique_name: str, limit: int = 5) -> str:
+    """
+    Get details of recent executions for a technique, including queries and answers.
+
+    Args:
+        technique_name: Name of the technique
+        limit: Number of recent executions to retrieve (default 5, max 10)
+
+    Returns:
+        JSON with execution details including queries, answers, and metrics.
+    """
+    db = next(get_db())
+    try:
+        limit = min(limit, 10)  # Cap at 10
+
+        results = db.query(RAGExecution).filter(
+            RAGExecution.technique_name == technique_name
+        ).order_by(desc(RAGExecution.created_at)).limit(limit).all()
+
+        if not results:
+            return json.dumps({"error": f"No executions found for '{technique_name}'"})
+
+        executions = []
+        for r in results:
+            exec_data = {
+                "id": r.id,
+                "query": r.query_text[:200] + "..." if len(r.query_text) > 200 else r.query_text,
+                "answer_preview": r.answer_text[:300] + "..." if len(r.answer_text) > 300 else r.answer_text,
+                "created_at": r.created_at.isoformat() if r.created_at else None,
+                "chunks_retrieved": len(r.sources) if r.sources else 0,
+            }
+            if r.metrics:
+                exec_data["metrics"] = {
+                    "latency_ms": round(r.metrics.latency_ms, 2),
+                    "faithfulness": round((r.metrics.faithfulness or 0) * 100, 1),
+                    "answer_relevancy": round((r.metrics.answer_relevancy or 0) * 100, 1),
+                }
+            executions.append(exec_data)
+
+        return json.dumps({
+            "technique": technique_name,
+            "count": len(executions),
+            "executions": executions
+        }, indent=2)
+    finally:
+        db.close()
+
+
+@tool
+def get_anomalies() -> str:
+    """
+    Detect performance anomalies and outliers across all techniques.
+
+    Returns:
+        JSON with identified anomalies such as high latency spikes,
+        low quality scores, and inconsistent performance.
+    """
+    db = next(get_db())
+    try:
+        anomalies = []
+
+        # Get all techniques
+        techniques = db.query(RAGExecution.technique_name).distinct().all()
+
+        for (technique,) in techniques:
+            stats = db.query(
+                func.avg(RAGMetric.latency_ms).label('avg_latency'),
+                func.max(RAGMetric.latency_ms).label('max_latency'),
+                func.min(RAGMetric.latency_ms).label('min_latency'),
+                func.avg(RAGMetric.faithfulness).label('avg_faith'),
+                func.min(RAGMetric.faithfulness).label('min_faith'),
+                func.avg(RAGMetric.context_precision).label('avg_precision'),
+                func.avg(RAGMetric.context_recall).label('avg_recall'),
+                func.count(RAGExecution.id).label('count'),
+            ).join(RAGMetric, RAGExecution.id == RAGMetric.execution_id
+            ).filter(RAGExecution.technique_name == technique).first()
+
+            if not stats.count:
+                continue
+
+            # Check for latency anomalies (max > 2x avg)
+            if stats.max_latency and stats.avg_latency:
+                if stats.max_latency > stats.avg_latency * 2:
+                    anomalies.append({
+                        "type": "latency_spike",
+                        "technique": technique,
+                        "severity": "high" if stats.max_latency > stats.avg_latency * 3 else "medium",
+                        "details": f"Max latency ({stats.max_latency:.0f}ms) is {stats.max_latency/stats.avg_latency:.1f}x higher than average ({stats.avg_latency:.0f}ms)",
+                    })
+
+            # Check for high variance using range-based estimation
+            if stats.max_latency and stats.min_latency and stats.avg_latency:
+                range_ratio = (stats.max_latency - stats.min_latency) / stats.avg_latency
+                if range_ratio > 1.0:  # Large spread relative to mean
+                    anomalies.append({
+                        "type": "high_variance",
+                        "technique": technique,
+                        "severity": "medium",
+                        "details": f"High latency variance (range/avg={range_ratio:.2f}). Performance is inconsistent.",
+                    })
+
+            # Check for low faithfulness
+            if stats.avg_faith is not None and stats.avg_faith < 0.5:
+                anomalies.append({
+                    "type": "low_faithfulness",
+                    "technique": technique,
+                    "severity": "high",
+                    "details": f"Average faithfulness is only {stats.avg_faith*100:.1f}%. Answers may not be grounded in retrieved context.",
+                })
+
+            # Check for zero precision/recall
+            if stats.avg_precision == 0 or stats.avg_recall == 0:
+                anomalies.append({
+                    "type": "zero_context_metrics",
+                    "technique": technique,
+                    "severity": "critical",
+                    "details": f"Context precision ({stats.avg_precision*100:.0f}%) or recall ({stats.avg_recall*100:.0f}%) is zero. Check retrieval pipeline.",
+                })
+
+        if not anomalies:
+            return json.dumps({"status": "healthy", "message": "No anomalies detected across all techniques."})
+
+        # Sort by severity
+        severity_order = {"critical": 0, "high": 1, "medium": 2, "low": 3}
+        anomalies.sort(key=lambda x: severity_order.get(x["severity"], 99))
+
+        return json.dumps({
+            "status": "issues_found",
+            "total_anomalies": len(anomalies),
+            "anomalies": anomalies
+        }, indent=2)
+    finally:
+        db.close()
+
+
+@tool
+def list_available_techniques() -> str:
+    """
+    List all available RAG techniques in the database with execution counts.
+
+    Returns:
+        JSON with list of techniques and their execution counts.
+    """
+    db = next(get_db())
+    try:
+        results = db.query(
+            RAGExecution.technique_name,
+            func.count(RAGExecution.id).label('count'),
+            func.max(RAGExecution.created_at).label('last_execution'),
+        ).group_by(RAGExecution.technique_name).all()
+
+        techniques = []
+        for r in results:
+            techniques.append({
+                "name": r.technique_name,
+                "executions": r.count,
+                "last_execution": r.last_execution.isoformat() if r.last_execution else None,
+            })
+
+        return json.dumps({
+            "total_techniques": len(techniques),
+            "techniques": sorted(techniques, key=lambda x: x["executions"], reverse=True)
+        }, indent=2)
+    finally:
+        db.close()
+
+
+# =============================================================================
+# AGENT TOOLS LIST
+# =============================================================================
+
+TOOLS = [
+    get_technique_stats,
+    compare_techniques,
+    get_best_technique,
+    get_execution_details,
+    get_anomalies,
+    list_available_techniques,
+]
+
+
+# =============================================================================
+# SYSTEM PROMPT
+# =============================================================================
+
+SYSTEM_PROMPT = """Você é o **RAG Analyst**, um especialista em análise de sistemas de Retrieval-Augmented Generation (RAG).
+
+## Sua Missão
+Analisar dados de performance de diferentes técnicas RAG e fornecer insights acionáveis para otimização.
+
+## Ferramentas Disponíveis
+Você tem acesso a ferramentas para consultar o banco de dados de execuções RAG:
+
+1. **list_available_techniques** - Liste todas as técnicas disponíveis antes de analisar
+2. **get_technique_stats** - Estatísticas detalhadas de uma técnica específica
+3. **compare_techniques** - Compare duas técnicas head-to-head
+4. **get_best_technique** - Encontre a melhor técnica para uma métrica específica
+5. **get_execution_details** - Veja execuções recentes com queries e respostas
+6. **get_anomalies** - Detecte problemas e anomalias de performance
+
+## Métricas Importantes
+- **Latência (ms)**: Tempo de resposta. Menor é melhor.
+- **Faithfulness (%)**: Resposta baseada nos chunks recuperados. Maior é melhor.
+- **Answer Relevancy (%)**: Resposta relevante à pergunta. Maior é melhor.
+- **Context Precision (%)**: Chunks recuperados são relevantes. Maior é melhor.
+- **Context Recall (%)**: Informação necessária foi recuperada. Maior é melhor.
+
+## Diretrizes de Análise
+
+### Ao Receber uma Pergunta:
+1. **SEMPRE** comece listando as técnicas disponíveis
+2. Use as ferramentas para coletar dados concretos
+3. Baseie suas conclusões nos dados, não em suposições
+4. Identifique trade-offs entre qualidade e velocidade
+
+### Formato de Resposta:
+- Responda em **Português Brasileiro**
+- Use formatação Markdown clara
+- Inclua números e porcentagens específicas
+- Destaque insights acionáveis com emoji 🎯
+- Aponte problemas críticos com ⚠️
+
+### Ao Fazer Recomendações:
+- Considere o caso de uso (velocidade vs qualidade)
+- Sugira ações específicas, não genéricas
+- Indique o impacto esperado das mudanças
+- Priorize problemas críticos primeiro
+
+## Personalidade
+- Direto e objetivo
+- Data-driven (sem opiniões sem dados)
+- Proativo em identificar problemas
+- Educativo (explique o "porquê" das recomendações)
+
+## Exemplo de Análise Ideal
+```
+📊 **Análise: Reranking vs Baseline**
+
+Dados coletados via compare_techniques:
+- Reranking: 87.5% faithfulness, 1882ms latência
+- Baseline: 46.9% faithfulness, 1715ms latência
+
+🎯 **Insight Principal**: Reranking oferece 86% mais fidelidade por apenas 10% mais latência.
+
+⚠️ **Atenção**: HyDE apresenta 4383ms de latência - 2.5x mais lento que alternativas.
+
+**Recomendação**: Use Reranking como padrão. Reserve Baseline para casos de baixa latência crítica.
+```
+
+Lembre-se: Suas análises ajudam desenvolvedores a escolher a melhor técnica RAG para seus casos de uso. Seja preciso e útil!"""
+
+
+# =============================================================================
+# LANGGRAPH AGENT CONSTRUCTION
+# =============================================================================
+
+def create_rag_analyst_agent():
+    """Create and return the RAG Analyst LangGraph agent."""
+
+    # Initialize LLM with tools
+    llm = ChatGoogleGenerativeAI(
+        model=settings.GEMINI_MODEL,
+        google_api_key=settings.GOOGLE_API_KEY,
+        temperature=0.3,
+        max_output_tokens=4096,
+    ).bind_tools(TOOLS)
+
+    # Create tool node
+    tool_node = ToolNode(TOOLS)
+
+    # Define the agent node
+    def agent_node(state: AgentState) -> dict:
+        """Process messages and decide on tool use or final response."""
+        messages = state["messages"]
+
+        # Add system prompt if not present
+        if not any(isinstance(m, dict) and m.get("role") == "system" for m in messages):
+            messages = [{"role": "system", "content": SYSTEM_PROMPT}] + list(messages)
+
+        response = llm.invoke(messages)
+        return {"messages": [response]}
+
+    # Define routing logic
+    def should_continue(state: AgentState) -> Literal["tools", "end"]:
+        """Determine if we should continue to tools or end."""
+        last_message = state["messages"][-1]
+
+        # If the LLM wants to use tools, route to tools
+        if hasattr(last_message, "tool_calls") and last_message.tool_calls:
+            return "tools"
+
+        # Otherwise, end the conversation
+        return "end"
+
+    # Build the graph
+    workflow = StateGraph(AgentState)
+
+    # Add nodes
+    workflow.add_node("agent", agent_node)
+    workflow.add_node("tools", tool_node)
+
+    # Set entry point
+    workflow.set_entry_point("agent")
+
+    # Add conditional edges
+    workflow.add_conditional_edges(
+        "agent",
+        should_continue,
+        {
+            "tools": "tools",
+            "end": END,
+        }
+    )
+
+    # Tools always return to agent
+    workflow.add_edge("tools", "agent")
+
+    # Compile the graph
+    return workflow.compile()
+
+
+# =============================================================================
+# ASYNC RUNNER
+# =============================================================================
+
+async def run_analyst(question: str, max_iterations: int = 10) -> dict:
+    """
+    Run the RAG Analyst agent with a question.
+
+    Args:
+        question: User's question about RAG performance
+        max_iterations: Maximum tool call iterations (safety limit)
+
+    Returns:
+        Dict with 'response' (final answer) and 'tool_calls' (list of tools used)
+    """
+    import asyncio
+
+    agent = create_rag_analyst_agent()
+
+    initial_state = {
+        "messages": [HumanMessage(content=question)],
+    }
+
+    # Run the agent
+    tool_calls_made = []
+
+    def run_sync():
+        nonlocal tool_calls_made
+        final_state = None
+
+        for i, state in enumerate(agent.stream(initial_state)):
+            if i >= max_iterations:
+                break
+
+            # Track tool calls
+            for node_name, node_state in state.items():
+                if node_name == "tools" and "messages" in node_state:
+                    for msg in node_state["messages"]:
+                        if isinstance(msg, ToolMessage):
+                            tool_calls_made.append({
+                                "tool": msg.name,
+                                "result_preview": msg.content[:200] + "..." if len(msg.content) > 200 else msg.content
+                            })
+
+            final_state = state
+
+        return final_state
+
+    final_state = await asyncio.to_thread(run_sync)
+
+    # Extract final response
+    final_response = ""
+    if final_state:
+        for node_state in final_state.values():
+            if "messages" in node_state:
+                for msg in node_state["messages"]:
+                    if isinstance(msg, AIMessage) and msg.content:
+                        final_response = msg.content
+
+    return {
+        "response": final_response,
+        "tool_calls": tool_calls_made,
+        "iterations": len(tool_calls_made),
+    }

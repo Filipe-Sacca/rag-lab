@@ -1,0 +1,18 @@
+{
+  "session_id": "67d6cd54-5874-490d-826e-c4665b771664",
+  "prompts": [
+    "voce n\u00e3o acha necess\u00e1rio implementar o agente usando o langGraph direto ? ou melhor deixar no modelo padr\u00e3o ? qual sua vis\u00e3o sobre ",
+    "ent\u00e3o no caso vamos ter um agente padr\u00e3o com langGraph , e o \u00fanico ponto que vai mudar \u00e9 a forma de  ele buscar informa\u00e7\u00e3o na base ou seja o RAG ?",
+    "a tecnica vai ser decidida pelo o que o frontend esta selecionado certo ? resposta direta",
+    "okay, vamos implementar o agente, primeiro precisamos decidir sobre o que vamos buscar, quais arquivos vamos procurar nabase vetorial lembrando que ser\u00e1 um MOC",
+    "gostei ",
+    "pode executar",
+    "o .env esta configurado",
+    "pergunta, todo fluxo de Tecnica de RAG n\u00e3o precisa fazer o upload de novo certo ? a partir de agora \u00e9 apenas o retrieval ? resposta direta [",
+    "okay, precisamos fazer a cria\u00e7\u00e3o do agente certo ?",
+    "pode ",
+    "voce suspeita do que ?",
+    "preciso fazer algo ?",
+    "pode reiniciar tanto o back quanto o front para testarmos o agente e o rag ?"
+  ]
+}

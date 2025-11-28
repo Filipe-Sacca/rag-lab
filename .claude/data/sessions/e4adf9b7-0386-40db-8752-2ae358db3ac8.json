@@ -1,0 +1,16 @@
+{
+  "session_id": "e4adf9b7-0386-40db-8752-2ae358db3ac8",
+  "prompts": [
+    "vou basear o desempenho pelos scores dos top 3 chuncks e pelo RAGAS, e logicamente pela resposta, voce acha justo ?",
+    "n\u00e3o precisa, vou testar agora, ja limpou nosso banco de dados ?",
+    "outra pergunta, quantidade de chunks, devo variar tamb\u00e9m ?",
+    "os dados n\u00e3o est\u00e3o sendo adicionados no banco de dados testei 2 vezes com o baseline e 1 com HyDE e n\u00e3o foram adicionados, investigue, se for testar lembre de n\u00e3o passar de 10 requisi\u00e7\u00f5es para a API do Google RPM",
+    "siga",
+    "gostaria que salvasse a resposta do agente tambem, adicione essa coluna ",
+    "[Image #1] n\u00e3o estou vendo a resposta do agente aqui ",
+    "Nao encontrei info rmacoes suficientes no contexto para responder essa pergunta. foi o que a t\u00e9cnica de rerak me retornou, sabe o que pode ser ? as tecnicasd baseline e hyde  encontraram, a de rerank esta inconsistente, os chuncks est\u00e3o perfeitos 99.8 e 99.5 mas a resposta n\u00e3o condiz",
+    "sim, mas mantenha a temperatura padr\u00e3o em todos os agentes, do contr\u00e1rio n\u00e3o iremos conseguir realmente avaliar a performance de cada um com recis\u00e3o ",
+    "apague do banco se tiver dados da tecnica de rerank ",
+    "gerei a analise rerank mas n\u00e3o foi salva no banco "
+  ]
+}

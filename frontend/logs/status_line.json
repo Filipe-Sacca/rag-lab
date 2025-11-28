@@ -1,0 +1,61 @@
+[
+  {
+    "timestamp": "2025-11-20T19:35:15.382848",
+    "input_data": {
+      "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab/frontend",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab/frontend",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.47",
+      "output_style": {
+        "name": "Ultra Concise"
+      },
+      "cost": {
+        "total_cost_usd": 12.343604150000003,
+        "total_duration_ms": 27924918,
+        "total_api_duration_ms": 2843564,
+        "total_lines_added": 1498,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/8d407f5e-e274-42a3-a900-5f3d721ab14e.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-20T19:35:15.383202",
+    "input_data": {
+      "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/8d407f5e-e274-42a3-a900-5f3d721ab14e.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab/frontend",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab/frontend",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.47",
+      "output_style": {
+        "name": "Ultra Concise"
+      },
+      "cost": {
+        "total_cost_usd": 12.343604150000003,
+        "total_duration_ms": 27924918,
+        "total_api_duration_ms": 2843564,
+        "total_lines_added": 1498,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  }
+]

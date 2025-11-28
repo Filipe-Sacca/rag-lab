@@ -1,0 +1,33 @@
+{
+  "name": "rag-lab",
+  "version": "1.0.0",
+  "description": "RAG Lab - Full Stack Application (Backend FastAPI + Frontend React)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --prefix \"[{name}]\" --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,magenta\" \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && ./venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
+    "frontend": "cd frontend/chat-lab && npm run dev",
+    "backend:kill": "pkill -f 'uvicorn main:app' || echo 'Backend não estava rodando'",
+    "frontend:kill": "pkill -f 'vite' || echo 'Frontend não estava rodando'",
+    "kill": "npm run backend:kill && npm run frontend:kill",
+    "restart": "npm run kill && sleep 2 && npm run dev",
+    "check": "curl -s http://localhost:8000/health | python3 -m json.tool && echo '\n✅ Backend OK' || echo '❌ Backend OFF'",
+    "logs:backend": "tail -f backend/logs/*.log 2>/dev/null || tail -f logs/backend.log 2>/dev/null || echo 'Sem logs do backend'",
+    "logs:frontend": "tail -f frontend.log 2>/dev/null || echo 'Sem logs do frontend'",
+    "install": "cd frontend/chat-lab && npm install",
+    "install:backend": "cd backend && pip install -r requirements.txt"
+  },
+  "keywords": [
+    "rag",
+    "ai",
+    "fastapi",
+    "react",
+    "llm",
+    "gemini"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

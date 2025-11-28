@@ -1,0 +1,18 @@
+{
+  "session_id": "8d407f5e-e274-42a3-a900-5f3d721ab14e",
+  "prompts": [
+    "fa\u00e7a para mim ",
+    "otimo, mas acredito que devemos simplificar a reinicia\u00e7\u00e3o dos servidores, centralizar em um comando unico npm run dev ai so entra dentro da pasta rag-lab e roda o comando que vai fazer o mesmo processo que estamos fazendo mas de forma mais r\u00e1pida, o que acha ?",
+    "ja sei o quea pasta api faz a pasta core faz o que ?",
+    "evaluation \u00e9 apnas a config do ragas certo ?",
+    "quero que me explique sobre todas as pastas o que fazem, apenas as pastas do backend",
+    "no caso a nossa llm n\u00e3o possui nenhum prompt ?",
+    "sim ",
+    "posw imple,emtar mas quero que os prompts sejam identicos em todas as t\u00e9cnicas, por que a ideia dessa aplica\u00e7\u00e3o \u00e9 utilizar diferentes t\u00e9cnicas de RAG e fazer a compara\u00e7\u00e3o entre elas ",
+    "/pr-comments ",
+    "a pasta graphs fa\\ oq ?",
+    "quais t\u00e9cnicas que faltam implementar ?",
+    "sim",
+    "pode implementar as que faltam, ai testamos todas de uma vez"
+  ]
+}
