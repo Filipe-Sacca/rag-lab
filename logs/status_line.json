@@ -10196,5 +10196,918 @@
       "exceeds_200k_tokens": false
     },
     "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:11.656593",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.7235850000000004,
+        "total_duration_ms": 964685,
+        "total_api_duration_ms": 187824,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:11.669526",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.7235850000000004,
+        "total_duration_ms": 964685,
+        "total_api_duration_ms": 187824,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:18.371202",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.7303890000000006,
+        "total_duration_ms": 971370,
+        "total_api_duration_ms": 192275,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:18.384129",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.7303890000000006,
+        "total_duration_ms": 971370,
+        "total_api_duration_ms": 192275,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:18.982746",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8203675000000006,
+        "total_duration_ms": 972006,
+        "total_api_duration_ms": 195979,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:18.996381",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8203675000000006,
+        "total_duration_ms": 972006,
+        "total_api_duration_ms": 195979,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:31.403527",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 984390,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:24:31.417404",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 984390,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:10.670836",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1263676,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:10.692556",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1263676,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:10.978126",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1263976,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:10.998617",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1263976,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:19.142984",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1272142,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:19.163564",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1272142,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:19.420582",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1272442,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:19.435886",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1272442,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:49.837528",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1302851,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:49.853098",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1302851,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:50.153944",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1303156,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/3ec2a51f-c984-4c14-a141-8ec7a96848ca.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-28T10:29:50.170729",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8929857500000007,
+        "total_duration_ms": 1303156,
+        "total_api_duration_ms": 208092,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-28T10:30:14.310648",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 2.8932767500000005,
+        "total_duration_ms": 1327277,
+        "total_api_duration_ms": 209569,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[91m\ud83e\udd16 Agent\u001b[0m | \u001b[93m\ud83d\udca1 oklay, botei pra rodar no github acti...\u001b[0m | \u001b[32mmain \u00b15\u001b[0m | \ud83d\udfe2"
+  },
+  {
+    "timestamp": "2025-11-28T10:30:15.251527",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 3.676248,
+        "total_duration_ms": 1328247,
+        "total_api_duration_ms": 216890,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[91m\ud83e\udd16 Agent\u001b[0m | \u001b[93m\ud83d\udca1 oklay, botei pra rodar no github acti...\u001b[0m | \u001b[32mmain \u00b15\u001b[0m | \ud83d\udfe2"
+  },
+  {
+    "timestamp": "2025-11-28T10:30:26.814050",
+    "input_data": {
+      "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 3.75429075,
+        "total_duration_ms": 1339802,
+        "total_api_duration_ms": 228236,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[91m\ud83e\udd16 Agent\u001b[0m | \u001b[93m\ud83d\udca1 oklay, botei pra rodar no github acti...\u001b[0m | \u001b[32mmain \u00b15\u001b[0m | \ud83d\udfe2"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:31.502552",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.7382987500000001,
+        "total_duration_ms": 3942961,
+        "total_api_duration_ms": 44406,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:31.520857",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.7382987500000001,
+        "total_duration_ms": 3942961,
+        "total_api_duration_ms": 44406,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:32.340161",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.7742890000000001,
+        "total_duration_ms": 3943848,
+        "total_api_duration_ms": 48309,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:32.357607",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.7742890000000001,
+        "total_duration_ms": 3943848,
+        "total_api_duration_ms": 48309,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:35.521852",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.7748330000000001,
+        "total_duration_ms": 3947033,
+        "total_api_duration_ms": 49356,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:35.535610",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.7748330000000001,
+        "total_duration_ms": 3947033,
+        "total_api_duration_ms": 49356,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:38.757038",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.8066717500000001,
+        "total_duration_ms": 3950220,
+        "total_api_duration_ms": 54544,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Opus 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-29T22:36:38.773699",
+    "input_data": {
+      "session_id": "20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9",
+      "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/20e6b9e8-7ac2-43fa-b7b4-b0b821335ed9.jsonl",
+      "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+      "model": {
+        "id": "claude-opus-4-5-20251101",
+        "display_name": "Opus 4.5"
+      },
+      "workspace": {
+        "current_dir": "/root/Filipe/Teste-Claude/rag-lab",
+        "project_dir": "/root/Filipe/Teste-Claude"
+      },
+      "version": "2.0.55",
+      "output_style": {
+        "name": "Learning"
+      },
+      "cost": {
+        "total_cost_usd": 0.8066717500000001,
+        "total_duration_ms": 3950220,
+        "total_api_duration_ms": 54544,
+        "total_lines_added": 0,
+        "total_lines_removed": 0
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Opus 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
   }
 ]

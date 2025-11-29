@@ -1,0 +1,6 @@
+{
+  "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+  "prompts": [
+    "oklay, botei pra rodar no github actions esse workflow, @.github/workflows/issue-analyzer.yml mas ele disse que o job foi skipado"
+  ]
+}

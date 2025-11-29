@@ -1,0 +1,18 @@
+[
+  {
+    "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input",
+    "notification_type": "idle_prompt"
+  },
+  {
+    "session_id": "3ec2a51f-c984-4c14-a141-8ec7a96848ca",
+    "transcript_path": "/root/.claude/projects/-root-Filipe-Teste-Claude/3ec2a51f-c984-4c14-a141-8ec7a96848ca.jsonl",
+    "cwd": "/root/Filipe/Teste-Claude/rag-lab",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input",
+    "notification_type": "idle_prompt"
+  }
+]
